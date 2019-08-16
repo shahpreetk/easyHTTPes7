@@ -18,11 +18,11 @@ const data={
 //     .catch(err => console.log(err));
 
 // UPDATE POST 
-http.put('https://jsonplaceholder.typicode.com/users/2',data)
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
-
-// DELETE USER
-// http.delete('https://jsonplaceholder.typicode.com/users/2')
+// http.put('https://jsonplaceholder.typicode.com/users/2',data)
 //     .then(data => console.log(data))
 //     .catch(err => console.log(err));
+
+// DELETE USER
+http.delete('https://jsonplaceholder.typicode.com/users/2')
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
