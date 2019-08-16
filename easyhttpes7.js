@@ -8,19 +8,17 @@ class EasyHTTP {
     }
 
     // MAKE AN HTTP POST REQUEST
-    post(url, data) {
-        return new Promise((resolve, reject) => {
-            fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                })
-                .then(res => res.json())
-                .then(data => resolve(data))
-                .catch(err => reject(err));
+    async post(url, data) {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
         });
+
+        const resData = await response.json();
+        return resData;
     }
     // MAKE AN HTTP PUT REQUEST
     put(url, data) {
@@ -48,7 +46,7 @@ class EasyHTTP {
                     }
                 })
                 .then(res => res.json())
-                .then(()=> resolve('Resource Deleted...'))
+                .then(() => resolve('Resource Deleted...'))
                 .catch(err => reject(err));
         });
     }
