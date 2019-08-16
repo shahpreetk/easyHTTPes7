@@ -13,14 +13,14 @@ const data={
 }
 
 // CREATE USER
-http.post('https://jsonplaceholder.typicode.com/users',data)
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
-
-// UPDATE POST 
-// http.put('https://jsonplaceholder.typicode.com/users/2',data)
+// http.post('https://jsonplaceholder.typicode.com/users',data)
 //     .then(data => console.log(data))
 //     .catch(err => console.log(err));
+
+// UPDATE POST 
+http.put('https://jsonplaceholder.typicode.com/users/2',data)
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 
 // DELETE USER
 // http.delete('https://jsonplaceholder.typicode.com/users/2')
